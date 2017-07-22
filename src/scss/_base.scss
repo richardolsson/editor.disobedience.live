@@ -1,0 +1,54 @@
+body {
+    font-size: 10px;
+
+    .page {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+* {
+    font-family: $f-mono, sans-serif;
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+}
+
+h3 {
+    font-size: 1.5em;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+a {
+    color: black;
+
+    &:hover {
+        color: black;
+    }
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@include medium-screen {
+    body {
+        font-size: 11px;
+    }
+}
+
+@include large-screen {
+    body {
+        font-size: 12px;
+    }
+}
