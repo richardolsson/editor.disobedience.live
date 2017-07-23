@@ -48,7 +48,7 @@
         &:after {
             content: "";
             display: block;
-            background: url(images/noise.gif);
+            background: url(/static/images/noise.gif);
             background-size: 500px 500px;
             position: absolute;
             opacity: 0.10;

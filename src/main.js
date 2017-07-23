@@ -20,6 +20,23 @@ function redraw() {
     $('.asset .info').text(data.info);
     $('.asset .gradient')
         .css('left', -(data.gradient * 900) + '%');
+
+    $('.preview').each(function() {
+        var preview = $(this);
+        var asset = preview.find('.asset');
+        var classes = asset.attr('class').split(/\s+/);
+        var medium = classes[1];
+        var format = classes[2];
+
+        var url = '/asset-preview'
+            + '?m=' + medium
+            + '&f=' + format
+            + '&g=' + data.gradient
+            + '&t=' + encodeURIComponent(data.title)
+            + '&i=' + encodeURIComponent(data.info);
+
+        preview.find('a').attr('href', url);
+    });
 }
 
 $(document).ready(function() {
