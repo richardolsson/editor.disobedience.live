@@ -1,0 +1,19 @@
+.previews {
+    .preview {
+        h3 {
+            margin: 0;
+        }
+
+        .asset {
+            margin: 0.8em 0;
+
+            &.print {
+                box-shadow: 0 0 1em rgba(0,0,0,0.2);
+            }
+        }
+    }
+
+    .poster {
+        font-size: 12px;
+    }
+}

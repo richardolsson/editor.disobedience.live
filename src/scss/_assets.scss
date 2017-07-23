@@ -1,0 +1,120 @@
+.asset {
+    .gradient-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .gradient {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 1000%;
+
+        &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+
+            background: linear-gradient(
+                90deg,
+                $c-grad00 0%,
+                $c-grad01 7%,
+                $c-grad02 14%,
+                $c-grad03 20%,
+                //$c-grad04 27%,
+                $c-grad05 35%,
+                $c-grad06 40%,
+                $c-grad07 47%,
+                $c-grad08 54%,
+                $c-grad09 59%,
+                $c-grad10 61%,
+                $c-grad00 65%,
+                $c-grad01 72%,
+                $c-grad02 79%,
+                $c-grad03 85%,
+                //$c-grad04 92%,
+                $c-grad05 100%
+            );
+
+            background-position: attr(data-grad em) 0;
+        }
+
+        &:after {
+            content: "";
+            display: block;
+            background: url(images/noise.gif);
+            background-size: 500px 500px;
+            position: absolute;
+            opacity: 0.10;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+}
+
+.print {
+    .content {
+    }
+}
+
+.poster {
+    font-size: 10mm;
+    width: 21em;
+    height: 29em;
+
+    position: relative;
+
+    .content {
+        position: absolute;
+        left: 0.5em;
+        top: 0.5em;
+        right: 0.5em;
+        bottom: 3em;
+        padding: 1em;
+
+        .title, .info {
+            color: white;
+            font-size: 1.4em;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 10;
+        }
+
+        .title {
+            &:after {
+                content: "";
+                background-color: white;
+                display: block;
+                width: 1em;
+                height: 0.2em;
+                margin: 0.5em 0;
+            }
+        }
+    }
+
+    .footer {
+        position: absolute;
+        left: 0.5em;
+        right: 0.5em;
+        bottom: 0.5em;
+
+        .link {
+            float: left;
+            font-size: 0.5em;
+        }
+
+        .logo {
+            float: right;
+            font-size: 0.6em;
+        }
+    }
+}
