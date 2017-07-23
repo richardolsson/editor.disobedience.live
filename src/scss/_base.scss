@@ -41,6 +41,12 @@ img {
     height: auto;
 }
 
+.page {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
 @include medium-screen {
     body {
         font-size: 11px;
