@@ -38,9 +38,10 @@
 
             <h2>Get the assets</h2>
             <div class="previews">
+                {% for asset in assets %}
                 <div class="preview">
-                    <h3>Instagram photo</h3>
-                    <div class="asset screen instagram">
+                    <h3>{{ asset.2 }}</h3>
+                    <div class="asset {{ asset.0 }} {{ asset.1 }}">
                         <div class="content gradient-container">
                             <div class="gradient"></div>
                             <div class="title"></div>
@@ -54,46 +55,9 @@
                             <img class="logo" src="/static/images/logo-white.svg">
                         </div>
                     </div>
-                    <a href="">Download this asset (JPG)</a>
+                    <a href="">Download this asset ({{ asset.3 }})</a>
                 </div>
-
-                <div class="preview">
-                    <h3>Facebook header</h3>
-                    <div class="asset screen fbheader">
-                        <div class="content gradient-container">
-                            <div class="gradient"></div>
-                            <div class="title"></div>
-                            <div class="info"></div>
-                        </div>
-                        <div class="footer">
-                            <div class="link">
-                                Part of Disobedience Live<br>
-                                disobedience.live/events
-                            </div>
-                            <img class="logo" src="/static/images/logo-white.svg">
-                        </div>
-                    </div>
-                    <a href="">Download this asset (JPG)</a>
-                </div>
-
-                <div class="preview">
-                    <h3>Poster (A4)</h3>
-                    <div class="asset print poster">
-                        <div class="content gradient-container">
-                            <div class="gradient"></div>
-                            <div class="title"></div>
-                            <div class="info"></div>
-                        </div>
-                        <div class="footer">
-                            <div class="link">
-                                Part of Disobedience Live<br>
-                                disobedience.live/events
-                            </div>
-                            <img class="logo" src="/static/images/logo.svg">
-                        </div>
-                    </div>
-                    <a href="">Download this asset (PDF)</a>
-                </div>
+                {% endfor %}
             </div>
         </div>
     </body>

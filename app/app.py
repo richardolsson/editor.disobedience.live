@@ -8,13 +8,23 @@ from flask import Flask, render_template, request, Response
 app = Flask(__name__)
 
 SIZES = {
-    'fbheader': (1200, 600),
+    'fbevent': (1920, 1080),
     'instagram': (1200, 1200),
+    'twitter': (1200, 600),
 }
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    data = {
+        'assets': (
+            ('screen', 'instagram', 'Instagram photo', 'JPEG'),
+            ('screen', 'fbevent', 'Facebook event header', 'JPEG'),
+            ('screen', 'twitter', 'Twitter sharing', 'JPEG'),
+            ('print', 'poster', 'Poster (A4)', 'PDF'),
+        )
+    }
+
+    return render_template('index.html', **data)
 
 @app.route('/asset')
 def asset():

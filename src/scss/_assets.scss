@@ -102,92 +102,24 @@
     }
 }
 
-.fbheader {
+.fbevent {
+    @include socmed-asset(10em);
     font-size: 10px;
-    width: 120em;
-    height: 60em;
-    position: relative;
-
-    .content {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
-        z-index: 0;
-        padding: 4em;
-
-        .title, .info {
-            font-size: 5em;
-        }
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 4em;
-        right: 4em;
-        left: 4em;
-
-        .link {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            font-size: 3em;
-            color: white;
-        }
-
-        .logo {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-
-            width: 30%;
-            height: auto;
-        }
-    }
+    width: 192em;
+    height: 108em;
 }
 
 .instagram {
+    @include socmed-asset();
     font-size: 10px;
     width: 120em;
     height: 120em;
-    position: relative;
+}
 
-    .content {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
-        z-index: 0;
-        padding: 4em;
+.twitter {
+    @include socmed-asset(5em);
 
-        .title, .info {
-            font-size: 8em;
-        }
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 4em;
-        right: 4em;
-        left: 4em;
-
-        .link {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            font-size: 3em;
-            color: white;
-        }
-
-        .logo {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-
-            width: 30%;
-            height: auto;
-        }
-    }
+    font-size: 10px;
+    width: 120em;
+    height: 60em;
 }

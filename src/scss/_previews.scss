@@ -1,5 +1,6 @@
 .previews {
     display: flex;
+    flex-wrap: wrap;
 
     .preview {
         align-items: flex-start;
@@ -23,7 +24,11 @@
         font-size: 12px;
     }
 
-    .fbheader {
+    .fbevent {
+        font-size: 3px;
+    }
+
+    .twitter {
         font-size: 4px;
     }
 
