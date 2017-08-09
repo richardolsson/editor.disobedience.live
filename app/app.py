@@ -7,7 +7,11 @@ from flask import Flask, render_template, request, Response
 
 app = Flask(__name__)
 
-from settings import STATIC_PATH, STATIC_DIR
+try:
+    from .settings import STATIC_PATH, STATIC_DIR
+except:
+    STATIC_PATH = '/static'
+    STATIC_DIR = '/var/app/static'
 
 SIZES = {
     'fbevent': (1920, 1080),
