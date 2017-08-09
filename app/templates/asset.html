@@ -1,6 +1,15 @@
 <!doctype html>
 <html>
     <head>
+        <link href="https://fonts.googleapis.com/css?family=Space+Mono" rel="stylesheet">
+        <style>
+            body, html {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
         <style>{{ style | safe }}</style>
     </head>
     <body>
@@ -15,9 +24,7 @@
                     Part of Disobedience Live<br>
                     disobedience.live/events
                 </div>
-                <div class="logo">
-                    DIS_OBEDIENCE.LIVE
-                </div>
+                <img class="logo" src="{{ static_path }}/images/logo.svg">
             </div>
         </div>
     </body>

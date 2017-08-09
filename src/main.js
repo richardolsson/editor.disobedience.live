@@ -28,7 +28,7 @@ function redraw() {
         var medium = classes[1];
         var format = classes[2];
 
-        var url = '/asset-preview'
+        var url = '/asset'
             + '?m=' + medium
             + '&f=' + format
             + '&g=' + data.gradient
