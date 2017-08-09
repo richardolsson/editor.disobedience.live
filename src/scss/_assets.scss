@@ -24,14 +24,14 @@
             bottom: 0;
             right: 0;
 
-            background-image: url(/static/images/gradient.png);
+            background-image: url(images/gradient.png);
             background-size: 100% 10px;
         }
 
         &:after {
             content: "";
             display: block;
-            background: url(/static/images/noise.gif);
+            background: url(images/noise.gif);
             background-size: 500px 500px;
             position: absolute;
             opacity: 0.10;

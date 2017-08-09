@@ -7,6 +7,8 @@ from flask import Flask, render_template, request, Response
 
 app = Flask(__name__)
 
+from settings import STATIC_PATH, STATIC_DIR
+
 SIZES = {
     'fbevent': (1920, 1080),
     'instagram': (1200, 1200),
@@ -16,6 +18,7 @@ SIZES = {
 @app.route('/')
 def index():
     data = {
+        'static_path': STATIC_PATH,
         'assets': (
             ('screen', 'instagram', 'Instagram photo', 'JPEG'),
             ('screen', 'fbevent', 'Facebook event header', 'JPEG'),
@@ -29,7 +32,7 @@ def index():
 @app.route('/asset')
 def asset():
     style = ''
-    with open('static/main.css', 'r') as f:
+    with open(STATIC_DIR + '/main.css', 'r') as f:
         style = f.read()
 
     data = {
@@ -39,18 +42,17 @@ def asset():
         'grad': float(request.args.get('g')) * 900,
         'title': request.args.get('t'),
         'info': request.args.get('i'),
-        'static_path': '/static',
+        'static_path': STATIC_PATH,
     }
 
+
     if request.args.get('preview', False):
+        data['style'] = data['style'].replace('url(', 'url(' + STATIC_PATH + '/')
+
         return render_template('asset.html', **data)
     else:
-        app_path = os.path.abspath(__file__)
-        app_dir = os.path.dirname(app_path)
-        static_path = os.path.join(app_dir, 'static')
-
-        data['static_path'] = static_path
-        data['style'] = data['style'].replace('/static', static_path)
+        data['static_path'] = STATIC_DIR
+        data['style'] = data['style'].replace('url(', 'url(' + STATIC_DIR + '/')
 
         html = render_template('asset.html', **data)
 
