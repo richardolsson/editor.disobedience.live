@@ -25,7 +25,11 @@
                     Part of Disobedience Live<br>
                     disobedience.live/events
                 </div>
+                {% if medium == 'print' %}
                 <img class="logo" src="{{ static_path }}/images/logo.svg">
+                {% else %}
+                <img class="logo" src="{{ static_path }}/images/logo-white.svg">
+                {% endif %}
             </div>
         </div>
     </body>
