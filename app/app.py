@@ -9,6 +9,7 @@ app = Flask(__name__)
 
 SIZES = {
     'fbheader': (1200, 600),
+    'instagram': (1200, 1200),
 }
 
 @app.route('/')
