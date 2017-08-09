@@ -1,11 +1,17 @@
 .previews {
+    display: flex;
+
     .preview {
+        align-items: flex-start;
+
+        margin: 0 2em 2em 0;
+
         h3 {
             margin: 0;
         }
 
         .asset {
-            margin: 0.8em 0;
+            margin: 14px 0;
 
             &.print {
                 box-shadow: 0 0 1em rgba(0,0,0,0.2);
@@ -15,5 +21,9 @@
 
     .poster {
         font-size: 12px;
+    }
+
+    .fbheader {
+        font-size: 4px;
     }
 }

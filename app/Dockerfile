@@ -19,8 +19,9 @@ RUN apt-get update \
 RUN curl "https://downloads.wkhtmltopdf.org/0.12/0.12.4/wkhtmltox-0.12.4_linux-generic-amd64.tar.xz" -L -o "wkhtmltopdf.tar.xz"
 RUN tar Jxvf wkhtmltopdf.tar.xz
 RUN mv wkhtmltox/bin/wkhtmltopdf /usr/local/bin/wkhtmltopdf
+RUN mv wkhtmltox/bin/wkhtmltoimage /usr/local/bin/wkhtmltoimage
 
-RUN pip3 install Flask==0.12.2 pdfkit
+RUN pip3 install Flask==0.12.2 pdfkit imgkit
 
 RUN apt-get clean && rm -rf /var/lib/opt/lists/* /tmp/* /var/tmp/*
 

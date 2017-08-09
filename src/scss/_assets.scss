@@ -42,10 +42,23 @@
             right: 0;
         }
     }
-}
 
-.print {
-    .content {
+    .title, .info {
+        color: white;
+        text-transform: uppercase;
+        position: relative;
+        z-index: 10;
+    }
+
+    .title {
+        &:after {
+            content: "";
+            background-color: white;
+            display: block;
+            width: 1em;
+            height: 0.2em;
+            margin: 0.5em 0;
+        }
     }
 }
 
@@ -65,22 +78,8 @@
         padding: 1em;
 
         .title, .info {
-            color: white;
             font-size: 1.4em;
             text-transform: uppercase;
-            position: relative;
-            z-index: 10;
-        }
-
-        .title {
-            &:after {
-                content: "";
-                background-color: white;
-                display: block;
-                width: 1em;
-                height: 0.2em;
-                margin: 0.5em 0;
-            }
         }
     }
 
@@ -97,6 +96,51 @@
 
         .logo {
             float: right;
+            width: 30%;
+            height: auto;
+        }
+    }
+}
+
+.fbheader {
+    font-size: 10px;
+    width: 120em;
+    height: 60em;
+    position: relative;
+
+    .content {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        top: 0;
+        z-index: 0;
+        padding: 4em;
+
+        .title, .info {
+            font-size: 5em;
+        }
+    }
+
+    .footer {
+        position: absolute;
+        bottom: 4em;
+        right: 4em;
+        left: 4em;
+
+        .link {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 3em;
+            color: white;
+        }
+
+        .logo {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
             width: 30%;
             height: auto;
         }
