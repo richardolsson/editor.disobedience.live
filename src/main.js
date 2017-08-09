@@ -28,7 +28,12 @@ function redraw() {
         var medium = classes[1];
         var format = classes[2];
 
-        var url = '/asset'
+        var path = location.pathname;
+        if (path.slice(-1) != '/') {
+            path += '/';
+        }
+
+        var url = path + 'asset'
             + '?m=' + medium
             + '&f=' + format
             + '&g=' + data.gradient
