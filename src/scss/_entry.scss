@@ -1,0 +1,24 @@
+.entry {
+    font-size: 1.1em;
+    .inputs {
+        @include list-reset;
+
+        li {
+            margin: 0 0 1em;
+        }
+    }
+
+    label {
+        display: block;
+        margin: 0 0 0.5em;
+    }
+
+    input {
+        width: 100%;
+        max-width: 40em;
+    }
+
+    input[type=text] {
+        padding: 0.4em;
+    }
+}
