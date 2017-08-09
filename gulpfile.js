@@ -7,6 +7,7 @@ var sass = require('gulp-sass');
 var source = require('vinyl-source-stream');
 var runSequence = require('run-sequence');
 var watch = require('gulp-watch');
+var autoprefixer = require('gulp-autoprefixer');
 
 
 const cssSrc = 'src/scss/main.scss';
@@ -20,6 +21,10 @@ gulp.task('buildSass', function() {
     return gulp.src(cssSrc)
         .pipe(concat('main.scss'))
         .pipe(sass())
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false,
+        }))
         .pipe(gulp.dest(cssDest));
 });
 
