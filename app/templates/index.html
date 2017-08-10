@@ -30,6 +30,13 @@
                         <textarea id="infoInput">Your event info here</textarea>
                     </li>
                     <li>
+                        <label>Text color</label>
+                        <ul class="radios">
+                            <li><input type="radio" id="whiteInput" name="textColor" value="white" checked> White</li>
+                            <li><input type="radio" id="blackInput" name="textColor" value="black"> Black</li>
+                        </ul>
+                    </li>
+                    <li>
                         <label for="titleInput">Gradient offset</label>
                         <input type="range" id="gradInput" min="0.0" max="1.0" step="0.001" value="0.3">
                     </li>
@@ -53,7 +60,7 @@
                                 disobedience.live/events
                             </div>
                             {% if asset.0 == "print" %}
-                            <img class="logo" src="{{ static_path }}/images/logo.svg">
+                            <img class="logo" src="{{ static_path }}/images/logo-black.svg">
                             {% else %}
                             <img class="logo" src="{{ static_path }}/images/logo-white.svg">
                             {% endif %}

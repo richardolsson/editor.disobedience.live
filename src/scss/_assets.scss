@@ -60,6 +60,16 @@
             margin: 0.5em 0;
         }
     }
+
+    &.black {
+        .title, .info {
+            color: black;
+        }
+
+        .title:after {
+            background-color: black;
+        }
+    }
 }
 
 .poster {
@@ -140,6 +150,12 @@
 
             width: 30%;
             height: auto;
+        }
+    }
+
+    &.black {
+        .link {
+            color: black;
         }
     }
 }

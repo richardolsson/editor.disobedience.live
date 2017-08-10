@@ -8,12 +8,16 @@
         }
     }
 
+    .radios {
+        @include list-reset;
+    }
+
     label {
         display: block;
         margin: 0 0 0.5em;
     }
 
-    input {
+    input[type=range] {
         width: 100%;
         max-width: 40em;
     }

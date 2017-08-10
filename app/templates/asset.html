@@ -14,7 +14,7 @@
         <style>{{ style | safe }}</style>
     </head>
     <body>
-        <div class="asset {{ medium }} {{ format }}">
+        <div class="asset {{ medium }} {{ format }} {{ color }}">
             <div class="content gradient-container">
                 <div class="gradient" style="left: -{{ grad }}%"></div>
                 <div class="title">{{ title |safe }}</div>
@@ -25,8 +25,8 @@
                     Part of Disobedience Live<br>
                     disobedience.live/events
                 </div>
-                {% if medium == 'print' %}
-                <img class="logo" src="{{ static_path }}/images/logo.svg">
+                {% if medium == 'print' or color == 'black' %}
+                <img class="logo" src="{{ static_path }}/images/logo-black.svg">
                 {% else %}
                 <img class="logo" src="{{ static_path }}/images/logo-white.svg">
                 {% endif %}

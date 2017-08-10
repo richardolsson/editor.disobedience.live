@@ -1,6 +1,7 @@
 var data = {
     title: '',
     info: '',
+    color: 'white',
     gradient: 0.0,
 };
 
@@ -21,6 +22,13 @@ function redraw() {
     $('.asset .gradient')
         .css('left', -(data.gradient * 900) + '%');
 
+    $('.asset').removeClass('white black');
+    $('.asset').addClass(data.color);
+    $('.asset.screen .logo').each(function() {
+        var src = $(this).attr('src');
+        $(this).attr('src', src.replace(/logo-.*\.svg/, 'logo-' + data.color + '.svg'));
+    });
+
     $('.preview').each(function() {
         var preview = $(this);
         var asset = preview.find('.asset');
@@ -36,6 +44,7 @@ function redraw() {
         var url = path + 'asset'
             + '?m=' + medium
             + '&f=' + format
+            + '&c=' + data.color
             + '&g=' + data.gradient
             + '&t=' + encodeURIComponent(data.title)
             + '&i=' + encodeURIComponent(data.info);
@@ -53,4 +62,9 @@ $(document).ready(function() {
     hookEntry($('#titleInput'), 'title');
     hookEntry($('#infoInput'), 'info');
     hookEntry($('#gradInput'), 'gradient');
+
+    $('#whiteInput, #blackInput').change(function() {
+        data.color = $('#whiteInput').prop('checked')? 'white' : 'black';
+        redraw();
+    });
 });
