@@ -35,48 +35,6 @@
     }
 }
 
-@mixin socmed-asset($text-size: 8em) {
-    position: relative;
-
-    .content {
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        top: 0;
-        z-index: 0;
-        padding: 4em;
-
-        .title, .info {
-            font-size: $text-size;
-        }
-    }
-
-    .footer {
-        position: absolute;
-        bottom: 4em;
-        right: 4em;
-        left: 4em;
-
-        .link {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            font-size: 3em;
-            color: white;
-        }
-
-        .logo {
-            position: absolute;
-            right: 0;
-            bottom: 0;
-
-            width: 30%;
-            height: auto;
-        }
-    }
-}
-
 @mixin medium-screen {
   @media (min-width: #{$medium-width}) {
     @content;
