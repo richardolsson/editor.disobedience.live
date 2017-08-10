@@ -18,6 +18,7 @@ SIZES = {
     'instagram': (1200, 1200),
     'twitter': (1200, 600),
     'poster': (1235, 1747),
+    'flyer': (876, 620),
 }
 
 @app.route('/')
@@ -29,6 +30,7 @@ def index():
             ('screen', 'fbevent', 'Facebook event header', 'JPEG'),
             ('screen', 'twitter', 'Twitter sharing', 'JPEG'),
             ('print', 'poster', 'Poster (A4)', 'JPEG, 150 DPI'),
+            ('print', 'flyer', 'Flyer (A6)', 'JPEG, 150 DPI'),
         )
     }
 

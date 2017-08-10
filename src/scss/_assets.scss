@@ -90,11 +90,7 @@
     }
 }
 
-.poster {
-    font-size: 59px;
-    width: 21em;
-    height: 29.7em;
-
+@mixin print-asset($text-size: 1.4em) {
     position: relative;
 
     .content {
@@ -106,7 +102,7 @@
         padding: 3em 2em;
 
         .title, .info {
-            font-size: 1.4em;
+            font-size: $text-size;
             text-transform: uppercase;
         }
     }
@@ -118,15 +114,40 @@
         bottom: 0.5em;
 
         .link {
-            float: left;
+            position: absolute;
+            left: 0;
+            bottom: 0;
             font-size: 0.5em;
         }
 
         .logo {
-            float: right;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
             width: 30%;
             height: auto;
         }
+    }
+}
+
+.poster {
+    @include print-asset();
+
+    font-size: 59px;
+    width: 21em;
+    height: 29.7em;
+}
+
+.flyer {
+    @include print-asset();
+
+    font-size: 30px;
+    width: 29.2em;
+    height: 20.7em;
+
+    .content {
+        padding: 2em 1.5em;
     }
 }
 
