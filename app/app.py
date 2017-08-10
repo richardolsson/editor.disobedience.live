@@ -17,6 +17,7 @@ SIZES = {
     'fbevent': (1920, 1080),
     'instagram': (1200, 1200),
     'twitter': (1200, 600),
+    'poster': (1235, 1747),
 }
 
 @app.route('/')
@@ -27,7 +28,7 @@ def index():
             ('screen', 'instagram', 'Instagram photo', 'JPEG'),
             ('screen', 'fbevent', 'Facebook event header', 'JPEG'),
             ('screen', 'twitter', 'Twitter sharing', 'JPEG'),
-            ('print', 'poster', 'Poster (A4)', 'PDF'),
+            ('print', 'poster', 'Poster (A4)', 'JPEG, 150 DPI'),
         )
     }
 
@@ -61,33 +62,17 @@ def asset():
 
         html = render_template('asset.html', **data)
 
-        if data['medium'] == 'print':
-            pdf = pdfkit.from_string(html, False, options={
-                'disable-smart-shrinking': '',
-                'page-width': '210',
-                'page-height': '297',
-                'margin-bottom': '0',
-                'margin-left': '0',
-                'margin-right': '0',
-                'margin-top': '0',
-            })
+        w, h = SIZES[data['format']]
+        img = imgkit.from_string(html, False, options={
+            'disable-smart-width': '',
+            'width': w,
+            'height': h,
+        })
 
-            resp = Response(pdf)
-            resp.headers['Content-Type'] = 'application/pdf'
-            resp.headers['Content-Disposition'] = 'attachment; filename=asset.pdf'
-            return resp
-        elif data['medium'] == 'screen':
-            w, h = SIZES[data['format']]
-            img = imgkit.from_string(html, False, options={
-                'disable-smart-width': '',
-                'width': w,
-                'height': h,
-            })
-
-            resp = Response(img)
-            resp.headers['Content-Type'] = 'image/jpeg'
-            resp.headers['Content-Disposition'] = 'attachment; filename=asset.jpg'
-            return resp
+        resp = Response(img)
+        resp.headers['Content-Type'] = 'image/jpeg'
+        resp.headers['Content-Disposition'] = 'attachment; filename=asset.jpg'
+        return resp
 
 
 if __name__ == '__main__':
