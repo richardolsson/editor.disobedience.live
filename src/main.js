@@ -16,8 +16,8 @@ function hookEntry(input, field) {
 }
 
 function redraw() {
-    $('.asset .title').text(data.title);
-    $('.asset .info').text(data.info);
+    $('.asset .title').html(data.title.split('\n').join('<br>'));
+    $('.asset .info').html(data.info.split('\n').join('<br>'));
     $('.asset .gradient')
         .css('left', -(data.gradient * 900) + '%');
 
