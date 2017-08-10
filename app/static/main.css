@@ -59,10 +59,17 @@ img {
       padding: 0; }
     .entry .inputs li {
       margin: 0 0 1em; }
+  .entry .radios {
+    padding: 0;
+    margin: 0; }
+    .entry .radios li {
+      list-style-type: none;
+      margin: 0;
+      padding: 0; }
   .entry label {
     display: block;
     margin: 0 0 0.5em; }
-  .entry input {
+  .entry input[type=range] {
     width: 100%;
     max-width: 40em; }
   .entry textarea {
@@ -92,8 +99,8 @@ img {
       left: 0;
       bottom: 0;
       right: 0;
-      background-image: url(images/gradient.png);
-      background-size: 100% 10px; }
+      background: -webkit-gradient(linear, left top, right top, from(#cdd7e0), color-stop(7%, #ff6524), color-stop(14%, #ff4334), color-stop(20%, #ff5000), color-stop(27%, #f905cd), color-stop(35%, #b21f81), color-stop(40%, #cdd7e0), color-stop(47%, #ff5000), color-stop(54%, #ff2c65), color-stop(59%, white), color-stop(61%, #0d156c), color-stop(65%, #cdd7e0), color-stop(72%, #ff6524), color-stop(79%, #ff4334), color-stop(85%, #ff5000), color-stop(92%, #f905cd), to(#b21f81));
+      background: linear-gradient(90deg, #cdd7e0 0%, #ff6524 7%, #ff4334 14%, #ff5000 20%, #f905cd 27%, #b21f81 35%, #cdd7e0 40%, #ff5000 47%, #ff2c65 54%, white 59%, #0d156c 61%, #cdd7e0 65%, #ff6524 72%, #ff4334 79%, #ff5000 85%, #f905cd 92%, #b21f81 100%); }
     .asset .gradient:after {
       content: "";
       display: block;
@@ -118,12 +125,16 @@ img {
     width: 1em;
     height: 0.2em;
     margin: 0.5em 0; }
+  .asset.black .title, .asset.black .info {
+    color: black; }
+  .asset.black .title:after {
+    background-color: black; }
 
 .poster {
-  font-size: 10mm;
+  position: relative;
+  font-size: 59px;
   width: 21em;
-  height: 29.7em;
-  position: relative; }
+  height: 29.7em; }
   .poster .content {
     position: absolute;
     left: 0.5em;
@@ -140,12 +151,50 @@ img {
     right: 0.5em;
     bottom: 0.5em; }
     .poster .footer .link {
-      float: left;
+      position: absolute;
+      left: 0;
+      bottom: 0;
       font-size: 0.5em; }
     .poster .footer .logo {
-      float: right;
+      position: absolute;
+      right: 0;
+      bottom: 0;
       width: 30%;
       height: auto; }
+
+.flyer {
+  position: relative;
+  font-size: 30px;
+  width: 29.2em;
+  height: 20.7em; }
+  .flyer .content {
+    position: absolute;
+    left: 0.5em;
+    top: 0.5em;
+    right: 0.5em;
+    bottom: 3em;
+    padding: 3em 2em; }
+    .flyer .content .title, .flyer .content .info {
+      font-size: 1.4em;
+      text-transform: uppercase; }
+  .flyer .footer {
+    position: absolute;
+    left: 0.5em;
+    right: 0.5em;
+    bottom: 0.5em; }
+    .flyer .footer .link {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      font-size: 0.5em; }
+    .flyer .footer .logo {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 30%;
+      height: auto; }
+  .flyer .content {
+    padding: 2em 1.5em; }
 
 .fbevent {
   position: relative;
@@ -179,6 +228,8 @@ img {
       bottom: 0;
       width: 30%;
       height: auto; }
+  .fbevent.black .link {
+    color: black; }
 
 .instagram {
   position: relative;
@@ -212,6 +263,8 @@ img {
       bottom: 0;
       width: 30%;
       height: auto; }
+  .instagram.black .link {
+    color: black; }
 
 .twitter {
   position: relative;
@@ -245,6 +298,8 @@ img {
       bottom: 0;
       width: 30%;
       height: auto; }
+  .twitter.black .link {
+    color: black; }
 
 .previews {
   display: -webkit-box;
@@ -264,7 +319,7 @@ img {
       .previews .preview .asset.print {
         -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
         box-shadow: 0 0 1em rgba(0, 0, 0, 0.2); }
-  .previews .poster {
+  .previews .print {
     font-size: 12px; }
   .previews .fbevent {
     font-size: 3px; }
