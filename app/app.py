@@ -44,8 +44,8 @@ def asset():
         'medium': request.args.get('m'),
         'format': request.args.get('f'),
         'grad': float(request.args.get('g')) * 900,
-        'title': request.args.get('t'),
-        'info': request.args.get('i'),
+        'title': request.args.get('t').replace('\n', '<br>'),
+        'info': request.args.get('i').replace('\n', '<br>'),
         'static_path': STATIC_PATH,
     }
 
