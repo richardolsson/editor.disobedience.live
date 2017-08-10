@@ -65,8 +65,11 @@ img {
   .entry input {
     width: 100%;
     max-width: 40em; }
-  .entry input[type=text] {
-    padding: 0.4em; }
+  .entry textarea {
+    padding: 0.4em;
+    width: 100%;
+    height: 5em;
+    max-width: 40em; }
 
 .asset {
   width: 100%;
@@ -127,7 +130,7 @@ img {
     top: 0.5em;
     right: 0.5em;
     bottom: 3em;
-    padding: 1em; }
+    padding: 3em 2em; }
     .poster .content .title, .poster .content .info {
       font-size: 1.4em;
       text-transform: uppercase; }
@@ -156,7 +159,7 @@ img {
     left: 0;
     top: 0;
     z-index: 0;
-    padding: 4em; }
+    padding: 8em 6em; }
     .fbevent .content .title, .fbevent .content .info {
       font-size: 10em; }
   .fbevent .footer {
@@ -189,7 +192,7 @@ img {
     left: 0;
     top: 0;
     z-index: 0;
-    padding: 4em; }
+    padding: 8em 6em; }
     .instagram .content .title, .instagram .content .info {
       font-size: 8em; }
   .instagram .footer {
@@ -222,7 +225,7 @@ img {
     left: 0;
     top: 0;
     z-index: 0;
-    padding: 4em; }
+    padding: 8em 6em; }
     .twitter .content .title, .twitter .content .info {
       font-size: 5em; }
   .twitter .footer {
